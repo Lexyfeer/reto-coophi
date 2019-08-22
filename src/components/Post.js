@@ -10,10 +10,11 @@ class Post extends Component {
                     <div className="card-body">
                         <p className="card-text">{this.props.post.message}</p>
                     </div>
-                    <button type="submit" className="btn btn-warning">Editar</button>
+                    <button type="submit" className="btn btn-warning"
+                        onClick={() => this.props.dispatch({ type: 'EDIT_POST', id: this.props.post.id })}>Editar</button>
                     <button type="submit" className="btn btn-danger"
                         onClick={() => this.props.dispatch({ type: 'DELETE_POST', id: this.props.post.id })}>
-                            Eliminar</button>
+                        Eliminar</button>
                 </div>
             </div>
         );
