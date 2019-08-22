@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Post from './Post';
+import EditComponent from './EditComponent';
 
 class AllPost extends Component {
     render() {
@@ -9,7 +10,13 @@ class AllPost extends Component {
             <div>
                 <h1>Todas las Notas</h1>
                 {/* {console.log(this.props.posts)} */}
-                {this.props.posts.map((post) => <Post key={post.id} post={post} />)}
+                {/* {this.props.posts.map((post) => <Post key={post.id} post={post} />)} */}
+                {this.props.posts.map((post) => (
+                    <div key={post.id}>
+                        {post.editing ? <EditComponent post={post} key={post.id} /> :
+                            <Post key={post.id} post={post} />}
+                    </div>
+                ))}
             </div>
         );
     }

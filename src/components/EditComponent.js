@@ -1,32 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class PostForm extends Component {
-    handleSubmit = (e) => {
+class EditComponent extends Component {
+    handleEdit = (e) => {
         e.preventDefault();
-        const title = this.getTitle.value;
-        const message = this.getMessage.value;
+        const newTitle = this.getTitle.value;
+        const newMessage = this.getMessage.value;
         const data = {
-            id: new Date(),
-            title,
-            message,
-            editing:false
+            newTitle,
+            newMessage
         }
-        // console.log(data)
-        this.props.dispatch({
-            type: 'ADD_POST',
-            data
-        });
-        this.getTitle.value = '';
-        this.getMessage.value = '';
+        this.props.dispatch({ type: 'UPDATE', id: this.props.post.id, data: data })
     }
-
     render() {
         return (
             <div>
-                <h1>Crea una nueva CoophiNota</h1>
+                <h1>Editar CoophiNota</h1>
 
-                <form className="createNote" onSubmit={this.handleSubmit}>
+                <form className="createNote" onSubmit={this.handleEdit}>
                     <div className="form-group">
                         <label>Titulo</label>
                         <input required type="text" className="form-control" placeholder="titulo de la nota" ref={(input) => this.getTitle = input} />
@@ -35,11 +26,12 @@ class PostForm extends Component {
                         <label>Example textarea</label>
                         <textarea required className="form-control" rows="3" cols="25" placeholder="Agrega una nota" ref={(input) => this.getMessage = input} ></textarea>
                     </div>
-                    <button type="submit" className="btn btn-primary">Crear</button>
+                    <button type="submit" className="btn btn-danger">Cancelar</button>
+                    <button type="submit" className="btn btn-success">Guardar</button>
                 </form>
             </div>
         );
     }
 }
 
-export default connect()(PostForm);
+export default connect()(EditComponent);
