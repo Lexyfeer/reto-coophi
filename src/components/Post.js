@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Post extends Component {
     render() {
@@ -10,11 +11,13 @@ class Post extends Component {
                         <p className="card-text">{this.props.post.message}</p>
                     </div>
                     <button type="submit" className="btn btn-warning">Editar</button>
-                    <button type="submit" className="btn btn-danger">Eliminar</button>
+                    <button type="submit" className="btn btn-danger"
+                        onClick={() => this.props.dispatch({ type: 'DELETE_POST', id: this.props.post.id })}>
+                            Eliminar</button>
                 </div>
             </div>
         );
     }
 }
 
-export default Post;
+export default connect()(Post);
