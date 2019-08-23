@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Control } from 'react-redux-form';
 
 
 class PostForm extends Component {
@@ -26,16 +27,30 @@ class PostForm extends Component {
         return (   
             <div className="contentCreateNewNote">
                 <h1>Crea una nueva CoophiNota</h1>
-                <form className="createNote" onSubmit={this.handleSubmit}>
+                <form className="createNote" model="data" onSubmit={(val) => this.handleSubmit(val)}>
                     <div className="form-group">
                         <label>Titulo</label>
-                        <input required type="text" className="form-control" placeholder="titulo de la nota" ref={(input) => this.getTitle = input} />
+                        <Control.text required 
+                        type="text" 
+                        model="data.title"
+                        className="form-control" 
+                        placeholder="titulo de la nota" 
+                        ref={(input) => this.getTitle = Control.text} 
+                    />
                     </div>
                     <div className="form-group">
                         <label>Example textarea</label>
-                        <textarea required className="form-control" rows="3" cols="25" placeholder="Agrega una nota" ref={(input) => this.getMessage = input} ></textarea>
+                        <Control.textarea required
+                        model="data.message"
+                        className="form-control" 
+                        rows="3" 
+                        cols="25" 
+                        placeholder="Agrega una nota" 
+                        ref={(input) => this.getMessage = Control.textarea} 
+                    />
                     </div>
-                    <button type="submit" className="btn btn-primary">Crear</button>
+                    <button type="submit" 
+                    className="btn btn-primary">Crear</button>
                 </form>
             </div>
         );

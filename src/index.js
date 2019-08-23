@@ -13,14 +13,14 @@ const store = createStore(PostReducer);
 
 ReactDOM.render(
     <HashRouter>
-    <Switch>
+        <Switch>
         
-        <Provider store={store}>
-            <App />
-        </Provider>,
+            <Provider store={store}>
+                <App />
+            </Provider>,
         
-    </Switch>
-</HashRouter> ,  document.getElementById('root'));
+        </Switch>
+    </HashRouter> ,  document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
