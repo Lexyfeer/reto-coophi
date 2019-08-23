@@ -26,7 +26,7 @@ class EditComponent extends Component {
                         <label>Example textarea</label>
                         <textarea required className="form-control" rows="3" cols="25" placeholder="Agrega una nota" ref={(input) => this.getMessage = input} ></textarea>
                     </div>
-                    <button type="submit" className="btn btn-danger">Cancelar</button>
+                    <button type="button" className="btn btn-danger">Cancelar</button>
                     <button type="submit" className="btn btn-success">Guardar</button>
                 </form>
             </div>

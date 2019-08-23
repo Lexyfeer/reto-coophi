@@ -5,6 +5,33 @@
   box-sizing: border-box;
 }
 
+.contentAllPost{
+  padding: .5rem;
+  text-align: center;
+  border: solid .1rem red;
+}
+
+.contentCreateNewNote {
+  padding: .5rem;
+  text-align: center;
+  border: solid .1rem black;
+}
+
+/* BARRA DE NAVEGACION */
+header {
+  background-color: #E6E6E6;
+  border-bottom: solid .2rem #58ACFA;
+}
+
+/* LOGO DE LA NAV */
+.App-logo-image {
+  width: 5rem;
+  height: 4rem;
+  border: solid .2rem red;
+  position: relative;
+  right: -2rem;
+}
+
 .createNote {
   width: 20rem;
   margin: 1rem;
