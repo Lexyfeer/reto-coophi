@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+
 class PostForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
@@ -22,10 +23,9 @@ class PostForm extends Component {
     }
 
     render() {
-        return (
-            <div>
+        return (   
+            <div className="contentCreateNewNote">
                 <h1>Crea una nueva CoophiNota</h1>
-
                 <form className="createNote" onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label>Titulo</label>
