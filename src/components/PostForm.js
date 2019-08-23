@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Control } from 'react-redux-form';
 
 
 class PostForm extends Component {
@@ -26,31 +25,17 @@ class PostForm extends Component {
     render() {
         return (   
             <div className="contentCreateNewNote">
-                <h1>Crea una nueva CoophiNota</h1>
-                <form className="createNote" model="data" onSubmit={(val) => this.handleSubmit(val)}>
+                <h2>Crea una nueva</h2>
+                <form className="createNote" onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label>Titulo</label>
-                        <Control.text required 
-                        type="text" 
-                        model="data.title"
-                        className="form-control" 
-                        placeholder="titulo de la nota" 
-                        ref={(input) => this.getTitle = Control.text} 
-                    />
+                        <input required type="text" className="form-control" placeholder="titulo de la nota" ref={(input) => this.getTitle = input} />
                     </div>
                     <div className="form-group">
                         <label>Example textarea</label>
-                        <Control.textarea required
-                        model="data.message"
-                        className="form-control" 
-                        rows="3" 
-                        cols="25" 
-                        placeholder="Agrega una nota" 
-                        ref={(input) => this.getMessage = Control.textarea} 
-                    />
+                        <textarea required className="form-control" rows="3" cols="25" placeholder="Agrega una nota" ref={(input) => this.getMessage = input} ></textarea>
                     </div>
-                    <button type="submit" 
-                    className="btn btn-primary">Crear</button>
+                    <button type="submit" className="btn btn-primary">Crear</button>
                 </form>
             </div>
         );
