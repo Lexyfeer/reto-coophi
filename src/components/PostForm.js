@@ -25,7 +25,7 @@ class PostForm extends Component {
     render() {
         return (   
             <div className="contentCreateNewNote">
-                <h1>Crea una nueva CoophiNota</h1>
+                <h2>Crea una nueva</h2>
                 <form className="createNote" onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label>Titulo</label>

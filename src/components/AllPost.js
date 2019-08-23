@@ -11,15 +11,14 @@ class AllPost extends Component {
         return (
             <React.Fragment>
                 <div className="contentAllPost">
-                    <h1>Todas las Notas</h1>
+                    <h2>Todas las Notas</h2>
                         {this.props.posts.map((post) => (
                             <div key={post.id}>
-                                {post.editing 
-                                    ? <EditComponent post={post} key={post.id} /> 
+                                {post.editing
+                                    ? <EditComponent post={post} key={post.id} />
                                     : <Post key={post.id} post={post} />}
                             </div>
                         ))}
-                
                 </div>
             </React.Fragment>
         );

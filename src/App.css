@@ -5,16 +5,18 @@
   box-sizing: border-box;
 }
 
-.contentAllPost{
+.contentAllPost {
+  min-height: 100vh;
   padding: .5rem;
   text-align: center;
-  border: solid .1rem red;
+  display: table;
+  border-right: solid .1rem #E6E6E6;
 }
 
 .contentCreateNewNote {
+  height: 100vh;
   padding: .5rem;
   text-align: center;
-  border: solid .1rem black;
 }
 
 /* BARRA DE NAVEGACION */
@@ -23,11 +25,16 @@ header {
   border-bottom: solid .2rem #58ACFA;
 }
 
+header h1 {
+  display: inline-block;
+  margin: auto 4rem;
+  vertical-align: middle;
+}
+
 /* LOGO DE LA NAV */
 .App-logo-image {
   width: 5rem;
   height: 4rem;
-  border: solid .2rem red;
   position: relative;
   right: -2rem;
 }
